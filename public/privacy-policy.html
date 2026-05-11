@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Family Wallet</title>
+  <meta name="description" content="Privacy Policy for Family Wallet.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Privacy Policy | Family Wallet">
+  <meta property="og:description" content="Read how Family Wallet collects, uses, and protects user data.">
+  <meta property="og:site_name" content="Family Wallet">
+  <!-- TODO: replace with production URL -->
+  <!-- <link rel="canonical" href="https://your-production-domain.com/privacy-policy.html"> -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f4f8ff;
+      --surface: #ffffff;
+      --surface-soft: #f2f6ff;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #1570ef;
+      --stroke: #d9e5ff;
+      --shadow-soft: 0 16px 45px rgba(15, 23, 42, 0.08);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 0%, #e8f0ff 0%, transparent 36%),
+        radial-gradient(circle at 92% 12%, #ddf9ff 0%, transparent 34%),
+        var(--bg);
+      overflow-x: hidden;
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(217, 229, 255, 0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .surface {
+      background: var(--surface);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .policy-card {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--stroke);
+      border-radius: 1.25rem;
+      padding: 1.1rem;
+    }
+
+    @media (min-width: 768px) {
+      .policy-card {
+        padding: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <nav class="sticky top-0 z-50 px-4 pt-4">
+    <div class="glass-nav max-w-4xl mx-auto rounded-2xl py-3 px-4 md:px-6 flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo/family-wallet-logo.png" alt="Family Wallet logo" class="h-9 w-9 rounded-xl object-cover border border-blue-100">
+        <div>
+          <p class="font-extrabold text-slate-900 leading-tight">Family Wallet</p>
+          <p class="text-xs text-slate-500 -mt-0.5">Privacy Policy</p>
+        </div>
+      </a>
+      <a href="index.html" class="text-sm font-semibold text-blue-700 hover:text-blue-800">Back to Home</a>
+    </div>
+  </nav>
+
+  <main class="px-4 pb-16">
+    <section class="max-w-4xl mx-auto mt-8 md:mt-10 surface rounded-3xl p-5 md:p-8">
+      <p class="text-xs font-bold tracking-[0.18em] uppercase text-blue-700">Legal</p>
+      <h1 class="mt-3 text-3xl md:text-4xl font-extrabold leading-tight">Privacy Policy</h1>
+      <p class="mt-3 text-sm md:text-base text-slate-600">This page describes how Family Wallet collects, uses, and protects your information.</p>
+
+      <div class="mt-7 space-y-4 md:space-y-5">
+        <article class="policy-card">
+          <h2 class="text-lg font-bold">Introduction</h2>
+          <p class="mt-2 text-slate-700 leading-7">This privacy policy applies to the Family Wallet app created by Samadhan Salunkhe as a Freemium service. This service is intended for use "AS IS".</p>
+        </article>
+
+        <article class="policy-card">
+          <h2 class="text-lg font-bold">Information Collection</h2>
+          <p class="mt-2 text-slate-700 leading-7">To facilitate cloud syncing and subscription management, we require certain personally identifiable information:</p>
+          <ul class="mt-3 space-y-2 text-slate-700">
+            <li><strong>Email Address & User IDs:</strong> Used for account creation, secure login, and synchronization via Firebase Authentication.</li>
+            <li><strong>Financial Records:</strong> Income, expenses, and budgets you enter are stored securely in Google Cloud Firestore.</li>
+            <li><strong>Purchase History:</strong> Data regarding your in-app subscription status, managed securely to unlock premium features.</li>
+            <li><strong>Device & Crash Data:</strong> We automatically collect IP addresses, crash logs, and diagnostics to improve performance and stability.</li>
+          </ul>
+        </article>
+
+        <article class="policy-card">
+          <h2 class="text-lg font-bold">Third-Party Services</h2>
+          <p class="mt-2 text-slate-700 leading-7">The application utilizes trusted third-party services that have their own privacy policies:</p>
+          <ul class="mt-3 grid sm:grid-cols-2 gap-2 text-slate-700">
+            <li>Google Play Services</li>
+            <li>AdMob (Advertising)</li>
+            <li>Google Analytics for Firebase</li>
+            <li>Firebase Crashlytics</li>
+            <li>RevenueCat (Subscription management)</li>
+          </ul>
+        </article>
+
+        <article class="policy-card">
+          <h2 class="text-lg font-bold">Biometric Security</h2>
+          <p class="mt-2 text-slate-700 leading-7">Family Wallet uses your device's native biometric authentication (such as Touch ID or Face ID) to secure the app locally. Biometric data is processed entirely on your device and is never collected, transmitted, or stored on our servers.</p>
+        </article>
+
+        <article class="policy-card">
+          <h2 class="text-lg font-bold">Data Retention & Deletion</h2>
+          <p class="mt-2 text-slate-700 leading-7">We retain your data as long as your account is active. You can request full deletion of your account and associated financial data at any time.</p>
+          <ul class="mt-3 space-y-2 text-slate-700">
+            <li><strong>In-App Deletion:</strong> Navigate to Account settings and select "Delete Household" and "Sign Out".</li>
+            <li><strong>Email Request:</strong> Contact <a class="text-blue-700 font-semibold" href="mailto:prasam.dev@gmail.com">prasam.dev@gmail.com</a> to request permanent data removal.</li>
+          </ul>
+        </article>
+
+        <article class="policy-card">
+          <h2 class="text-lg font-bold">Data Security</h2>
+          <p class="mt-2 text-slate-700 leading-7">We use industry-standard safeguards, including TLS/SSL encryption for data transmitted to cloud servers, to protect your financial profile.</p>
+        </article>
+
+        <article class="policy-card">
+          <h2 class="text-lg font-bold">Target Audience & Children</h2>
+          <p class="mt-2 text-slate-700 leading-7">Family Wallet is a financial utility designed for adult household managers and is intended for users aged 18 and over. We do not knowingly collect personally identifiable information from children under 18.</p>
+        </article>
+
+        <article class="policy-card">
+          <h2 class="text-lg font-bold">Contact Us</h2>
+          <p class="mt-2 text-slate-700 leading-7">For privacy questions or data deletion requests, contact <a class="text-blue-700 font-semibold" href="mailto:prasam.dev@gmail.com">prasam.dev@gmail.com</a>.</p>
+        </article>
+      </div>
+
+      <div class="mt-8 flex justify-center">
+        <span class="text-[11px] uppercase tracking-[0.18em] font-bold text-slate-500 bg-[var(--surface-soft)] border border-[var(--stroke)] px-4 py-2 rounded-full">Effective Date: Apr 7, 2026</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
