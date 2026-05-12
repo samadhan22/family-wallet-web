@@ -158,7 +158,6 @@
       padding: 0.9rem 0.35rem 1.35rem;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(223, 236, 255, 0.38));
       border: 1px solid rgba(217, 229, 255, 0.9);
-      touch-action: pan-x;
     }
 
     .snapshot-stage::after {
@@ -181,7 +180,7 @@
       max-width: 100%;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior-x: contain;
-      touch-action: pan-x;
+      touch-action: auto;
     }
 
     .snapshot-rail::-webkit-scrollbar {
@@ -213,7 +212,6 @@
       object-fit: cover;
       object-position: top;
       display: block;
-      pointer-events: none;
       user-select: none;
     }
 
@@ -340,7 +338,7 @@
             <span class="bg-white border border-[var(--stroke)] rounded-full px-3 py-1.5">Fast Local Search</span>
           </div>
 
-          <div class="reveal delay-3 mt-6 sm:mt-7 grid grid-cols-1 min-[380px]:grid-cols-3 gap-3 max-w-none sm:max-w-lg">
+          <div class="reveal delay-3 mt-6 sm:mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-none sm:max-w-lg">
             <div class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl px-3 py-4 text-center">
               <p class="text-xl md:text-2xl font-extrabold">Real-time</p>
               <p class="text-xs text-slate-500 mt-1">Shared updates</p>
