@@ -5,54 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Family Wallet | Shared Money, Peacefully Managed</title>
   <meta name="description" content="Family Wallet helps couples and families manage shared expenses, budgets, and goals with real-time sync, privacy controls, and fast local performance.">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#1570ef">
-
-  <!-- TODO: replace with production URL -->
-  <!-- <link rel="canonical" href="https://your-production-domain.com/"> -->
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Family Wallet | Shared Money, Peacefully Managed">
-  <meta property="og:description" content="Track shared expenses, sync in real time, and make smarter household money decisions with Family Wallet.">
-  <meta property="og:site_name" content="Family Wallet">
-  <!-- TODO: replace with production URL -->
-  <!-- <meta property="og:url" content="https://your-production-domain.com/"> -->
-  <!-- TODO: replace with OG image URL -->
-  <!-- <meta property="og:image" content="https://your-production-domain.com/assets/og/family-wallet-cover.jpg"> -->
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Family Wallet | Shared Money, Peacefully Managed">
-  <meta name="twitter:description" content="Family budgeting made simple with real-time sync, secure access, and fast insights.">
-  <!-- TODO: replace with OG image URL -->
-  <!-- <meta name="twitter:image" content="https://your-production-domain.com/assets/og/family-wallet-cover.jpg"> -->
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Family Wallet",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Android, iOS",
-    "description": "Family Wallet helps couples and families manage shared expenses, budgets, and financial goals with real-time sync and privacy controls.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "downloadUrl": "https://play.google.com/store/apps/details?id=com.prasam.app.familywallet",
-    "sameAs": [
-      "privacy-policy.html",
-      "terms.html"
-    ]
-  }
-  </script>
-  <!-- TODO: replace with production URL -->
-  <!-- JSON-LD optional field: "url": "https://your-production-domain.com/" -->
-  <!-- TODO: add App Store URL when live -->
-  <!-- JSON-LD optional field: "installUrl": "https://apps.apple.com/app/idXXXXXXXXXX" -->
-  <!-- TODO: replace with OG image URL -->
-  <!-- JSON-LD optional field: "image": "https://your-production-domain.com/assets/og/family-wallet-cover.jpg" -->
-
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,43 +17,28 @@
       --surface: #ffffff;
       --surface-soft: #f2f6ff;
       --text: #0f172a;
-      --muted: #475569;
       --primary: #1570ef;
-      --primary-strong: #0b5cd8;
       --accent: #05b6d3;
       --stroke: #d9e5ff;
-      --radius-xl: 1.5rem;
-      --radius-2xl: 2rem;
       --shadow-soft: 0 16px 45px rgba(15, 23, 42, 0.08);
       --shadow-lift: 0 28px 70px rgba(21, 112, 239, 0.2);
-    }
-
-    html, body {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-
-    * {
-      box-sizing: border-box;
     }
 
     body {
       font-family: 'DM Sans', sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at 12% 0%, #e6efff 0%, transparent 40%),
-        radial-gradient(circle at 88% 8%, #d9fbff 0%, transparent 35%),
-        var(--bg);
+      background: radial-gradient(circle at 12% 0%, #e6efff 0%, transparent 40%), var(--bg);
       overflow-x: hidden;
-      width: 100%;
     }
+
+    /* Hide scrollbar but keep functionality */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
     .glass-nav {
       background: rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(217, 229, 255, 0.95);
       backdrop-filter: blur(12px);
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      border: 1px solid rgba(217, 229, 255, 0.95);
     }
 
     .surface {
@@ -113,549 +51,176 @@
       background: linear-gradient(120deg, var(--primary), var(--accent));
       color: #fff;
       box-shadow: 0 10px 24px rgba(21, 112, 239, 0.32);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 28px rgba(21, 112, 239, 0.35);
-    }
-
-    .btn-secondary {
-      color: #0f172a;
-      background: #e8efff;
-      border: 1px solid #ccddff;
-    }
-
-    .hero-glow {
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(50px);
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .hero-glow.left {
-      width: 280px;
-      height: 280px;
-      left: -120px;
-      top: -70px;
-      background: rgba(21, 112, 239, 0.26);
-    }
-
-    .hero-glow.right {
-      width: 340px;
-      height: 340px;
-      right: -140px;
-      bottom: -90px;
-      background: rgba(5, 182, 211, 0.22);
-    }
-
-    .snapshot-stage {
-      position: relative;
-      overflow: hidden;
-      border-radius: 1.6rem;
-      padding: 0.9rem 0.35rem 1.35rem;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(223, 236, 255, 0.38));
-      border: 1px solid rgba(217, 229, 255, 0.9);
-    }
-
-    .snapshot-stage::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 28px;
-      pointer-events: none;
-      background: linear-gradient(to bottom, rgba(244, 248, 255, 0), rgba(244, 248, 255, 0.95));
-    }
-
-    .snapshot-rail {
-      scrollbar-width: thin;
-      scrollbar-color: #bfd7ff transparent;
-      overflow-y: hidden;
-      padding-top: 0.2rem;
-      width: 100%;
-      max-width: 100%;
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior-x: contain;
-      touch-action: auto;
-    }
-
-    .snapshot-rail::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .snapshot-rail::-webkit-scrollbar-thumb {
-      background: #bfd7ff;
-      border-radius: 999px;
     }
 
     .phone-frame {
-      border-radius: 2rem;
+      border-radius: 2.2rem;
       border: 8px solid #0f172a;
-      overflow: hidden;
       background: #0f172a;
       box-shadow: var(--shadow-lift);
-      width: 100%;
-      max-width: 280px;
-      flex: 0 0 280px;
+      min-width: 260px;
+      width: 260px;
       aspect-ratio: 9 / 19.5;
-      transform: translateY(0);
-      animation: floatPhonePremium 6.2s ease-in-out infinite;
+      animation: float 6s ease-in-out infinite;
     }
 
-    .phone-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-      display: block;
-      user-select: none;
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
     }
 
-    .hero-content,
-    .hero-media {
-      min-width: 0;
-      max-width: 100%;
+    .snap-x {
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
     }
+    .snap-center { scroll-snap-align: center; }
 
+    /* Custom Notch */
     .phone-notch {
       position: absolute;
-      left: 50%;
-      top: 0;
+      top: 0; left: 50%;
       transform: translateX(-50%);
-      width: 38%;
-      height: 20px;
+      width: 40%; height: 18px;
+      background: #0f172a;
       border-bottom-left-radius: 12px;
       border-bottom-right-radius: 12px;
-      background: #0f172a;
-      z-index: 2;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(14px);
-      animation: revealUp 0.7s ease forwards;
-    }
-
-    .delay-1 { animation-delay: 0.08s; }
-    .delay-2 { animation-delay: 0.16s; }
-    .delay-3 { animation-delay: 0.24s; }
-
-    .faq-toggle-icon {
-      transition: transform 0.2s ease;
-    }
-
-    .faq-button[aria-expanded="true"] .faq-toggle-icon {
-      transform: rotate(45deg);
-    }
-
-    .text-balance {
-      text-wrap: balance;
-    }
-
-    .text-pretty {
-      text-wrap: pretty;
-    }
-
-    @media (max-width: 640px) {
-      .snapshot-stage {
-        padding: 0.7rem 0.2rem 1rem;
-      }
-
-      .snapshot-rail {
-        padding-right: 0.25rem !important;
-      }
-
-      .phone-frame {
-        max-width: 238px;
-        flex-basis: 238px;
-      }
-    }
-
-    @keyframes floatPhonePremium {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-11px); }
-    }
-
-    @keyframes revealUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .phone-frame,
-      .reveal {
-        animation: none !important;
-        opacity: 1;
-        transform: none;
-      }
+      z-index: 10;
     }
   </style>
 </head>
 <body class="antialiased">
-  <nav class="sticky top-0 z-50 px-2 sm:px-4 pt-4">
-    <div class="glass-nav max-w-6xl mx-auto rounded-2xl py-3 px-4 md:px-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 px-4 pt-4">
+    <div class="glass-nav max-w-6xl mx-auto rounded-2xl py-3 px-5 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <img src="assets/logo/family-wallet-logo.png" alt="Family Wallet logo" class="h-9 w-9 rounded-xl object-cover border border-blue-100">
-        <div class="hero-content">
-          <p class="font-extrabold text-slate-900 leading-tight">Family Wallet</p>
-          <p class="text-xs text-slate-500 -mt-0.5">Shared finances, zero confusion</p>
-        </div>
+        <div class="h-9 w-9 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold">FW</div>
+        <span class="font-extrabold text-slate-900 hidden sm:block">Family Wallet</span>
       </div>
-      <div class="w-full sm:w-auto flex flex-wrap sm:flex-nowrap items-center justify-start sm:justify-end gap-2 md:gap-3">
-        <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet" target="_blank" rel="noopener noreferrer" class="btn-primary text-xs sm:text-sm font-semibold rounded-xl px-3 py-2 md:px-4">Get Android App</a>
-        <span class="btn-secondary text-xs md:text-sm font-semibold rounded-xl px-3 py-2">App Store: Coming Soon</span>
-      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet" class="btn-primary text-xs font-bold rounded-xl px-4 py-2">Install App</a>
     </div>
   </nav>
 
-  <main class="px-2 sm:px-4 pb-20">
-    <section class="max-w-6xl mx-auto mt-8 md:mt-12 relative">
-      <div class="hero-glow left"></div>
-      <div class="hero-glow right"></div>
-      <div class="surface rounded-2xl sm:rounded-[var(--radius-2xl)] p-4 sm:p-6 md:p-10 lg:p-14 grid lg:grid-cols-2 gap-8 lg:gap-10 items-center overflow-hidden">
-        <div class="hero-media">
-          <div class="reveal inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 rounded-full px-2.5 sm:px-3 py-1.5">
-            <span class="h-2 w-2 rounded-full bg-blue-600"></span>
-            <p class="text-[10px] sm:text-[11px] font-extrabold tracking-[0.14em] sm:tracking-[0.16em] uppercase">Family Finance Companion</p>
-          </div>
-          <h1 class="reveal delay-1 mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.06] text-balance max-w-[16ch] sm:max-w-[18ch] md:max-w-[20ch]">Shared money, finally calm and clear.</h1>
-          <p class="reveal delay-2 mt-4 sm:mt-5 text-[15px] sm:text-base md:text-lg text-slate-600 text-pretty max-w-[34ch] sm:max-w-[44ch] md:max-w-[52ch]">A premium household finance app for couples and families to track together, stay synced in real time, and make better money decisions with confidence.</p>
-
-          <div class="reveal delay-3 mt-6 sm:mt-7 flex flex-wrap items-center gap-3">
-            <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet" target="_blank" rel="noopener noreferrer" class="btn-primary rounded-xl px-4 sm:px-5 py-3 text-sm sm:text-base font-semibold">Get it on Google Play</a>
-            <span class="btn-secondary rounded-xl px-4 sm:px-5 py-3 text-sm font-semibold">iOS Launching Soon</span>
-          </div>
-
-          <div class="reveal delay-3 mt-4 flex flex-wrap items-center gap-2 text-[11px] sm:text-xs text-slate-600">
-            <span class="bg-white border border-[var(--stroke)] rounded-full px-3 py-1.5">Real-time Household Sync</span>
-            <span class="bg-white border border-[var(--stroke)] rounded-full px-3 py-1.5">Biometric Protection</span>
-            <span class="bg-white border border-[var(--stroke)] rounded-full px-3 py-1.5">Fast Local Search</span>
-          </div>
-
-          <div class="reveal delay-3 mt-6 sm:mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-none sm:max-w-lg">
-            <div class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl px-3 py-4 text-center">
-              <p class="text-xl md:text-2xl font-extrabold">Real-time</p>
-              <p class="text-xs text-slate-500 mt-1">Shared updates</p>
-            </div>
-            <div class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl px-3 py-4 text-center">
-              <p class="text-xl md:text-2xl font-extrabold">Secure</p>
-              <p class="text-xs text-slate-500 mt-1">Biometric lock</p>
-            </div>
-            <div class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl px-3 py-4 text-center">
-              <p class="text-xl md:text-2xl font-extrabold">Instant</p>
-              <p class="text-xs text-slate-500 mt-1">Search speed</p>
-            </div>
-          </div>
-        </div>
-
+  <main class="px-4">
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto mt-8 md:mt-12 surface rounded-[2.5rem] overflow-hidden p-6 md:p-14">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        
         <div>
-          <p class="text-sm font-semibold text-slate-600 mb-3 sm:mb-4">Preview</p>
-          <div class="snapshot-stage">
-            <div class="snapshot-rail flex gap-4 overflow-x-auto pb-4 pr-4 snap-x snap-mandatory">
-            <article class="phone-frame snap-center relative" style="animation-delay: 0s;">
-              <div class="phone-notch"></div>
-              <img src="assets/screenshots/ios/0_APP_IPHONE_65_0.png" alt="Family Wallet app dashboard screenshot">
-            </article>
-            <article class="phone-frame snap-center relative" style="animation-delay: 0.12s;">
-              <div class="phone-notch"></div>
-              <img src="assets/screenshots/ios/1_APP_IPHONE_65_1.png" alt="Family Wallet transactions screenshot">
-            </article>
-            <article class="phone-frame snap-center relative" style="animation-delay: 0.24s;">
-              <div class="phone-notch"></div>
-              <img src="assets/screenshots/ios/2_APP_IPHONE_65_2.png" alt="Family Wallet budget planning screenshot">
-            </article>
-            <article class="phone-frame snap-center relative" style="animation-delay: 0.36s;">
-              <div class="phone-notch"></div>
-              <img src="assets/screenshots/ios/3_APP_IPHONE_65_3.png" alt="Family Wallet reports screenshot">
-            </article>
-            <article class="phone-frame snap-center relative" style="animation-delay: 0.48s;">
-              <div class="phone-notch"></div>
-              <img src="assets/screenshots/ios/4_APP_IPHONE_65_4.png" alt="Family Wallet analytics screenshot">
-            </article>
-            <article class="phone-frame snap-center relative" style="animation-delay: 0.6s;">
-              <div class="phone-notch"></div>
-              <img src="assets/screenshots/ios/5_APP_IPHONE_65_5.png" alt="Family Wallet profile and settings screenshot">
-            </article>
+          <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 rounded-full px-3 py-1 mb-6">
+            <span class="h-2 w-2 rounded-full bg-blue-600 animate-pulse"></span>
+            <p class="text-[10px] font-extrabold uppercase tracking-widest">Premium Finance App</p>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.1] mb-6">Shared money, finally calm and clear.</h1>
+          <p class="text-slate-600 text-lg mb-8 max-w-md">Track together, stay synced in real time, and make better money decisions with confidence.</p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet" class="btn-primary rounded-2xl px-8 py-4 font-bold text-center">Get it on Google Play</a>
+            <div class="bg-slate-100 rounded-2xl px-8 py-4 font-bold text-slate-400 text-center border border-slate-200">iOS Coming Soon</div>
+          </div>
+
+          <!-- Mobile Swipable Stats -->
+          <div class="flex overflow-x-auto no-scrollbar snap-x gap-4 -mx-2 px-2 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-3">
+            <div class="snap-center min-w-[140px] flex-1 bg-blue-50 border border-blue-100 rounded-2xl p-4 text-center">
+              <p class="text-xl font-extrabold text-blue-700">Real-time</p>
+              <p class="text-xs text-blue-500 mt-1">Shared Updates</p>
+            </div>
+            <div class="snap-center min-w-[140px] flex-1 bg-cyan-50 border border-cyan-100 rounded-2xl p-4 text-center">
+              <p class="text-xl font-extrabold text-cyan-700">Secure</p>
+              <p class="text-xs text-cyan-500 mt-1">Biometric Lock</p>
+            </div>
+            <div class="snap-center min-w-[140px] flex-1 bg-indigo-50 border border-indigo-100 rounded-2xl p-4 text-center">
+              <p class="text-xl font-extrabold text-indigo-700">Instant</p>
+              <p class="text-xs text-indigo-500 mt-1">Local Search</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="max-w-6xl mx-auto mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div class="surface rounded-2xl p-5">
-        <p class="text-sm text-slate-500">Built For</p>
-        <p class="mt-2 font-extrabold text-xl">Couples & Families</p>
-      </div>
-      <div class="surface rounded-2xl p-5">
-        <p class="text-sm text-slate-500">Data Layer</p>
-        <p class="mt-2 font-extrabold text-xl">Cloud + Local Speed</p>
-      </div>
-      <div class="surface rounded-2xl p-5">
-        <p class="text-sm text-slate-500">Security</p>
-        <p class="mt-2 font-extrabold text-xl">Device Biometrics</p>
-      </div>
-      <div class="surface rounded-2xl p-5">
-        <p class="text-sm text-slate-500">Goal</p>
-        <p class="mt-2 font-extrabold text-xl">Stress-Free Budgeting</p>
-      </div>
-    </section>
-
-    <section class="max-w-6xl mx-auto mt-12 md:mt-16">
-      <div class="surface rounded-3xl p-6 md:p-9">
-        <p class="text-xs font-bold tracking-[0.18em] uppercase text-blue-700">How It Works</p>
-        <h2 class="mt-3 text-3xl md:text-4xl font-extrabold leading-tight">Get aligned on family money in three simple steps.</h2>
-        <p class="mt-3 text-slate-600 max-w-2xl">From setup to smarter decisions, Family Wallet helps every household member stay on the same financial page.</p>
-
-        <div class="mt-7 grid md:grid-cols-3 gap-4 md:gap-5">
-          <article class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl p-5 reveal">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-extrabold tracking-[0.16em] text-blue-700 bg-blue-100 rounded-full px-3 py-1">01</span>
-              <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5V9H2v11h5m10 0v-6a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v6m10 0H7" /></svg>
-              </div>
+        <!-- Phone Carousel -->
+        <div class="relative">
+          <p class="text-xs font-bold text-slate-400 mb-4 text-center lg:text-left">SWIPE PREVIEW</p>
+          <div class="flex overflow-x-auto snap-x no-scrollbar gap-6 pb-8">
+            <!-- Frame 1 -->
+            <div class="phone-frame snap-center relative">
+              <div class="phone-notch"></div>
+              <img src="assets/screenshots/ios/0_APP_IPHONE_65_0.png" alt="Dashboard">
             </div>
-            <h3 class="mt-4 text-xl font-extrabold leading-tight">Create Household</h3>
-            <p class="mt-2 text-sm text-slate-600 leading-6">Set up your household space and invite members so everyone tracks within one shared wallet.</p>
-          </article>
-
-          <article class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl p-5 reveal delay-1">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-extrabold tracking-[0.16em] text-cyan-700 bg-cyan-100 rounded-full px-3 py-1">02</span>
-              <div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v8m-4-4h8M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z" /></svg>
-              </div>
+            <!-- Frame 2 -->
+            <div class="phone-frame snap-center relative">
+              <div class="phone-notch"></div>
+              <img src="assets/screenshots/ios/1_APP_IPHONE_65_1.png" alt="Transactions">
             </div>
-            <h3 class="mt-4 text-xl font-extrabold leading-tight">Track Together</h3>
-            <p class="mt-2 text-sm text-slate-600 leading-6">Log expenses and income in seconds with real-time syncing so no one misses what changed.</p>
-          </article>
-
-          <article class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl p-5 reveal delay-2">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-extrabold tracking-[0.16em] text-indigo-700 bg-indigo-100 rounded-full px-3 py-1">03</span>
-              <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center">
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 14l3-3 3 2 4-5" /></svg>
-              </div>
+            <!-- Frame 3 -->
+            <div class="phone-frame snap-center relative">
+              <div class="phone-notch"></div>
+              <img src="assets/screenshots/ios/2_APP_IPHONE_65_2.png" alt="Budgets">
             </div>
-            <h3 class="mt-4 text-xl font-extrabold leading-tight">Review & Improve</h3>
-            <p class="mt-2 text-sm text-slate-600 leading-6">Use budget and insight views to understand trends and improve monthly spending decisions.</p>
-          </article>
-        </div>
-
-        <div class="mt-7 flex flex-wrap items-center gap-3">
-          <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet" target="_blank" rel="noopener noreferrer" class="btn-primary rounded-xl px-5 py-3 font-semibold">Start on Google Play</a>
-          <span class="btn-secondary rounded-xl px-5 py-3 text-sm font-semibold">iOS Coming Soon</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="max-w-6xl mx-auto mt-12 md:mt-16">
-      <div class="grid md:grid-cols-3 gap-4 md:gap-6">
-        <article class="surface rounded-3xl p-6">
-          <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center mb-5">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5V9H2v11h5m10 0v-6a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v6m10 0H7" /></svg>
           </div>
-          <h3 class="font-bold text-2xl leading-tight">Shared Budgets That Actually Stay Synced</h3>
-          <p class="mt-3 text-slate-600">Every expense and budget update reflects quickly so everyone sees the same reality.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="max-w-6xl mx-auto mt-16 grid md:grid-cols-3 gap-6">
+        <article class="surface rounded-3xl p-8 hover:border-blue-300 transition-colors">
+            <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            </div>
+            <h3 class="font-bold text-2xl leading-tight mb-3">Sync with Partner</h3>
+            <p class="text-slate-600">Every expense update reflects quickly so both partners see the same financial reality.</p>
         </article>
 
-        <article class="surface rounded-3xl p-6">
-          <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center mb-5">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35M10.8 18a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Z" /></svg>
-          </div>
-          <h3 class="font-bold text-2xl leading-tight">Find Any Transaction in Seconds</h3>
-          <p class="mt-3 text-slate-600">Search and filter through history instantly, so monthly reviews feel simple, not painful.</p>
+        <article class="surface rounded-3xl p-8 hover:border-green-300 transition-colors">
+            <div class="w-12 h-12 rounded-2xl bg-green-100 text-green-700 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            </div>
+            <h3 class="font-bold text-2xl leading-tight mb-3">Fast Local Search</h3>
+            <p class="text-slate-600">Find any transaction in milliseconds. Our Isar-powered search works even when offline.</p>
         </article>
 
-        <article class="surface rounded-3xl p-6">
-          <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center mb-5">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 11V8a5 5 0 0 1 10 0v3m-12 0h14v9H5z" /></svg>
-          </div>
-          <h3 class="font-bold text-2xl leading-tight">Private by Design</h3>
-          <p class="mt-3 text-slate-600">Protect your financial data with secure authentication and optional biometric locking.</p>
+        <article class="surface rounded-3xl p-8 hover:border-indigo-300 transition-colors">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+            </div>
+            <h3 class="font-bold text-2xl leading-tight mb-3">Privacy First</h3>
+            <p class="text-slate-600">We don't sell your data. Secure your wallet with biometric locks for maximum peace of mind.</p>
         </article>
-      </div>
     </section>
 
-    <section class="max-w-6xl mx-auto mt-12 md:mt-16">
-      <div class="surface rounded-3xl p-6 md:p-9">
-        <p class="text-xs font-bold tracking-[0.18em] uppercase text-blue-700">Trust & Security</p>
-        <h2 class="mt-3 text-3xl md:text-4xl font-extrabold leading-tight">Built with privacy, security, and family control in mind.</h2>
-        <p class="mt-3 text-slate-600 max-w-2xl">Family Wallet is designed to keep your household data protected while staying simple and transparent.</p>
+    <!-- FAQ Section -->
+    <section class="max-w-4xl mx-auto mt-20 mb-20">
+      <h2 class="text-3xl font-extrabold text-center mb-10">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <details class="group surface rounded-2xl p-6 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer">
+            <h3 class="font-bold text-slate-900">Is Family Wallet free?</h3>
+            <span class="text-blue-600 font-bold group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-4 text-slate-600 leading-relaxed">Yes! Core tracking is free. We offer premium features for advanced household management.</p>
+        </details>
 
-        <div class="mt-7 grid md:grid-cols-3 gap-4 md:gap-5">
-          <article class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl p-5 reveal">
-            <div class="w-11 h-11 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2zm10-10V7a4 4 0 0 0-8 0v4h8z"/></svg>
-            </div>
-            <h3 class="mt-4 text-xl font-extrabold leading-tight">Secure Access</h3>
-            <p class="mt-2 text-sm text-slate-600 leading-6">Sign-in controls and optional biometric locks help protect access to your family financial data.</p>
-          </article>
-
-          <article class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl p-5 reveal delay-1">
-            <div class="w-11 h-11 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h10"/><path stroke-linecap="round" stroke-linejoin="round" d="m18 15 2 2 4-4" transform="translate(-2 0)"/></svg>
-            </div>
-            <h3 class="mt-4 text-xl font-extrabold leading-tight">Encrypted Sync</h3>
-            <p class="mt-2 text-sm text-slate-600 leading-6">Data sent between your app and cloud services is protected in transit using modern encryption standards.</p>
-          </article>
-
-          <article class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl p-5 reveal delay-2">
-            <div class="w-11 h-11 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-9-9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6"/></svg>
-            </div>
-            <h3 class="mt-4 text-xl font-extrabold leading-tight">Data Control</h3>
-            <p class="mt-2 text-sm text-slate-600 leading-6">Delete household data from in-app settings or request permanent removal by contacting support.</p>
-          </article>
-        </div>
-
-        <div class="mt-7 flex flex-wrap items-center gap-3">
-          <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet" target="_blank" rel="noopener noreferrer" class="btn-primary rounded-xl px-5 py-3 font-semibold">Download on Google Play</a>
-          <span class="btn-secondary rounded-xl px-5 py-3 text-sm font-semibold">iOS Coming Soon</span>
-        </div>
-
-        <p class="mt-4 text-sm text-slate-600">
-          Learn more:
-          <a href="privacy-policy.html" class="font-semibold text-blue-700 hover:text-blue-800">Privacy Policy</a>
-          <span class="px-1 text-slate-400">|</span>
-          <a href="terms.html" class="font-semibold text-blue-700 hover:text-blue-800">Terms of Service</a>
-        </p>
-      </div>
-    </section>
-
-    <section class="max-w-6xl mx-auto mt-12 md:mt-16">
-      <div class="surface rounded-3xl p-6 md:p-9">
-        <p class="text-xs font-bold tracking-[0.18em] uppercase text-blue-700">FAQ</p>
-        <h2 class="mt-3 text-3xl md:text-4xl font-extrabold leading-tight">Common questions before you get started.</h2>
-        <p class="mt-3 text-slate-600 max-w-2xl">Everything you need to know about Family Wallet pricing, privacy, syncing, and platform availability.</p>
-
-        <div class="mt-7 space-y-3" data-faq-root>
-          <article class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl overflow-hidden">
-            <h3>
-              <button type="button" class="faq-button w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-slate-900" aria-expanded="true" aria-controls="faq-panel-1" id="faq-button-1">
-                <span>Is Family Wallet free to use?</span>
-                <span class="faq-toggle-icon text-blue-700 text-xl leading-none">+</span>
-              </button>
-            </h3>
-            <div id="faq-panel-1" role="region" aria-labelledby="faq-button-1" class="px-5 pb-5 text-slate-600 leading-7">
-              Yes. Family Wallet offers a freemium experience with core tracking features available for free and optional premium upgrades for advanced needs.
-            </div>
-          </article>
-
-          <article class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl overflow-hidden">
-            <h3>
-              <button type="button" class="faq-button w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-slate-900" aria-expanded="false" aria-controls="faq-panel-2" id="faq-button-2">
-                <span>Is my financial data secure?</span>
-                <span class="faq-toggle-icon text-blue-700 text-xl leading-none">+</span>
-              </button>
-            </h3>
-            <div id="faq-panel-2" role="region" aria-labelledby="faq-button-2" class="px-5 pb-5 text-slate-600 leading-7" hidden>
-              We use secure authentication, encrypted cloud communication, and device-level security options such as biometrics to help protect your financial information.
-            </div>
-          </article>
-
-          <article class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl overflow-hidden">
-            <h3>
-              <button type="button" class="faq-button w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-slate-900" aria-expanded="false" aria-controls="faq-panel-3" id="faq-button-3">
-                <span>Can my partner or family see updates in real time?</span>
-                <span class="faq-toggle-icon text-blue-700 text-xl leading-none">+</span>
-              </button>
-            </h3>
-            <div id="faq-panel-3" role="region" aria-labelledby="faq-button-3" class="px-5 pb-5 text-slate-600 leading-7" hidden>
-              Yes. Shared household changes sync quickly across connected members so everyone sees up-to-date expenses, budgets, and balances.
-            </div>
-          </article>
-
-          <article class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl overflow-hidden">
-            <h3>
-              <button type="button" class="faq-button w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-slate-900" aria-expanded="false" aria-controls="faq-panel-4" id="faq-button-4">
-                <span>Does the app work if internet is unstable or offline?</span>
-                <span class="faq-toggle-icon text-blue-700 text-xl leading-none">+</span>
-              </button>
-            </h3>
-            <div id="faq-panel-4" role="region" aria-labelledby="faq-button-4" class="px-5 pb-5 text-slate-600 leading-7" hidden>
-              Core app interactions are designed for speed with local-first behavior, and cloud syncing continues when connectivity is available again.
-            </div>
-          </article>
-
-          <article class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl overflow-hidden">
-            <h3>
-              <button type="button" class="faq-button w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-slate-900" aria-expanded="false" aria-controls="faq-panel-5" id="faq-button-5">
-                <span>How do I delete my data or account?</span>
-                <span class="faq-toggle-icon text-blue-700 text-xl leading-none">+</span>
-              </button>
-            </h3>
-            <div id="faq-panel-5" role="region" aria-labelledby="faq-button-5" class="px-5 pb-5 text-slate-600 leading-7" hidden>
-              You can request deletion from within the app flows and also contact support at prasam.dev@gmail.com for permanent account and data removal.
-            </div>
-          </article>
-
-          <article class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl overflow-hidden">
-            <h3>
-              <button type="button" class="faq-button w-full px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-slate-900" aria-expanded="false" aria-controls="faq-panel-6" id="faq-button-6">
-                <span>Is iOS available right now?</span>
-                <span class="faq-toggle-icon text-blue-700 text-xl leading-none">+</span>
-              </button>
-            </h3>
-            <div id="faq-panel-6" role="region" aria-labelledby="faq-button-6" class="px-5 pb-5 text-slate-600 leading-7" hidden>
-              iOS is currently marked as coming soon. Android users can download Family Wallet today from Google Play.
-            </div>
-          </article>
-        </div>
-
-        <div class="mt-7 flex flex-wrap items-center gap-3">
-          <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet" target="_blank" rel="noopener noreferrer" class="btn-primary rounded-xl px-5 py-3 font-semibold">Download on Google Play</a>
-          <span class="btn-secondary rounded-xl px-5 py-3 text-sm font-semibold">iOS Coming Soon</span>
-        </div>
+        <details class="group surface rounded-2xl p-6 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex items-center justify-between cursor-pointer">
+            <h3 class="font-bold text-slate-900">How does the sync work?</h3>
+            <span class="text-blue-600 font-bold group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-4 text-slate-600 leading-relaxed">We use Firebase's real-time listeners. As soon as one person logs a transaction, it appears on the other person's phone.</p>
+        </details>
       </div>
     </section>
   </main>
 
-  <footer class="px-4 pb-10">
-    <div class="max-w-6xl mx-auto surface rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-slate-600 text-center md:text-left">© 2026 Family Wallet. Built for better family financial decisions.</p>
-      <div class="flex items-center gap-5 text-sm font-semibold">
-        <a href="privacy-policy.html" class="text-slate-700 hover:text-blue-700 transition-colors">Privacy Policy</a>
-        <a href="terms.html" class="text-slate-700 hover:text-blue-700 transition-colors">Terms of Service</a>
+  <footer class="max-w-6xl mx-auto mb-10 px-4">
+    <div class="surface rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <p class="text-slate-500 text-sm">© 2026 Family Wallet. All rights reserved.</p>
+      <div class="flex gap-6 text-sm font-bold text-slate-700">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:prasam.dev@gmail.com">Support</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    (function () {
-      const root = document.querySelector('[data-faq-root]');
-      if (!root) return;
-
-      const buttons = Array.from(root.querySelectorAll('.faq-button'));
-      const closeAll = () => {
-        buttons.forEach((btn) => {
-          const panelId = btn.getAttribute('aria-controls');
-          const panel = panelId ? document.getElementById(panelId) : null;
-          btn.setAttribute('aria-expanded', 'false');
-          if (panel) panel.hidden = true;
-        });
-      };
-
-      buttons.forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const expanded = btn.getAttribute('aria-expanded') === 'true';
-          const panelId = btn.getAttribute('aria-controls');
-          const panel = panelId ? document.getElementById(panelId) : null;
-
-          closeAll();
-          if (!expanded && panel) {
-            btn.setAttribute('aria-expanded', 'true');
-            panel.hidden = false;
-          }
-        });
-      });
-    })();
-  </script>
 </body>
 </html>
