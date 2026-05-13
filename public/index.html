@@ -7,7 +7,7 @@
   <meta name="description" content="Family Wallet helps couples and families manage shared expenses, budgets, and goals with real-time sync, privacy controls, and fast local performance.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1570ef">
-
+  
   <!-- TODO: replace with production URL -->
   <!-- <link rel="canonical" href="https://your-production-domain.com/"> -->
 
@@ -26,7 +26,7 @@
   <!-- TODO: replace with OG image URL -->
   <!-- <meta name="twitter:image" content="https://your-production-domain.com/assets/og/family-wallet-cover.jpg"> -->
 
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -46,7 +46,7 @@
     ]
   }
   </script>
-  <!-- TODO: replace with production URL -->
+    <!-- TODO: replace with production URL -->
   <!-- JSON-LD optional field: "url": "https://your-production-domain.com/" -->
   <!-- TODO: add App Store URL when live -->
   <!-- JSON-LD optional field: "installUrl": "https://apps.apple.com/app/idXXXXXXXXXX" -->
@@ -342,8 +342,7 @@
             <span class="bg-white border border-[var(--stroke)] rounded-full px-3 py-1.5">Fast Local Search</span>
           </div>
 
-          <!-- INJECTED FIX: Switched from 'grid grid-cols-1' to 'flex' on mobile, added snap-x overflow -->
-          <div class="reveal delay-3 mt-6 sm:mt-7 flex sm:grid sm:grid-cols-3 gap-3 w-full max-w-none sm:max-w-lg overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2 sm:pb-0">
+          <div class="reveal delay-3 mt-6 sm:mt-7 flex flex-nowrap sm:grid sm:grid-cols-3 gap-3 w-full max-w-full sm:max-w-lg overflow-x-auto overflow-y-hidden no-scrollbar snap-x snap-mandatory pb-2 sm:pb-0" style="-webkit-overflow-scrolling: touch; touch-action: pan-x;">
             <div class="bg-[var(--surface-soft)] border border-[var(--stroke)] rounded-2xl px-3 py-4 text-center shrink-0 min-w-[130px] snap-center">
               <p class="text-xl md:text-2xl font-extrabold">Real-time</p>
               <p class="text-xs text-slate-500 mt-1">Shared updates</p>
@@ -359,11 +358,10 @@
           </div>
         </div>
 
-        <div>
+        <div class="min-w-0 w-full">
           <p class="text-sm font-semibold text-slate-600 mb-3 sm:mb-4">Preview</p>
           <div class="snapshot-stage">
-            <!-- INJECTED FIX: Added 'flex-nowrap' and 'no-scrollbar' to ensure perfect horizontal swipe -->
-            <div class="snapshot-rail flex flex-nowrap gap-4 overflow-x-auto no-scrollbar pb-4 pr-4 snap-x snap-mandatory">
+            <div class="snapshot-rail w-full flex flex-nowrap gap-4 overflow-x-auto overflow-y-hidden no-scrollbar pb-4 pr-4 snap-x snap-mandatory" style="-webkit-overflow-scrolling: touch; touch-action: pan-x;">
             <article class="phone-frame snap-center relative" style="animation-delay: 0s;">
               <div class="phone-notch"></div>
               <img src="assets/screenshots/ios/0_APP_IPHONE_65_0.png" alt="Family Wallet app dashboard screenshot">
