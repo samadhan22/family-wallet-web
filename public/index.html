@@ -240,20 +240,6 @@
       z-index: 2;
     }
 
-    .tab-btn[aria-selected="true"] {
-      background: #fffdf8;
-      border-color: var(--stroke-strong);
-      color: #0f172a;
-      box-shadow: 0 8px 18px rgba(24, 33, 47, 0.08);
-    }
-
-    .tab-btn {
-      border: 1px solid var(--stroke);
-      background: #f4ecdf;
-      color: #6a6e66;
-      transition: all 0.2s ease;
-    }
-
     .feature-card {
       background: rgba(255, 253, 248, 0.98);
       border: 1px solid var(--stroke);
@@ -287,35 +273,29 @@
   </style>
 </head>
 <body class="antialiased">
-  <nav class="fixed top-0 inset-x-0 z-50 px-2 sm:px-4 pt-4">
-    <div class="glass-nav max-w-6xl mx-auto rounded-2xl py-3 px-4 md:px-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-      <div class="flex items-center gap-3">
-        <img src="assets/logo/family-wallet-logo.png" alt="Family Wallet logo" class="h-9 w-9 rounded-xl object-cover border border-blue-100">
+  
+  <nav class="fixed top-0 inset-x-0 z-50 px-2 sm:px-4 pt-2 sm:pt-4">
+    <div class="glass-nav max-w-6xl mx-auto rounded-2xl py-2 px-3 sm:py-3 sm:px-6 flex items-center justify-between gap-2 sm:gap-3">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <img src="assets/logo/family-wallet-logo.png" alt="Family Wallet logo" class="h-8 w-8 sm:h-9 sm:w-9 rounded-xl object-cover border border-blue-100">
         <div>
-          <p class="font-extrabold text-slate-900 leading-tight">Family Wallet</p>
-          <p class="text-xs text-slate-500 -mt-0.5">Shared finances, zero confusion</p>
+          <p class="font-extrabold text-slate-900 leading-tight text-sm sm:text-base">Family Wallet</p>
+          <p class="text-[10px] sm:text-xs text-slate-500 -mt-0.5 hidden sm:block">Shared finances, zero confusion</p>
         </div>
       </div>
-      <div class="w-full sm:w-auto flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
-        <div class="flex flex-wrap items-center gap-4 text-sm font-semibold text-slate-600">
+      <div class="flex items-center gap-3 sm:gap-5">
+        <div class="hidden lg:flex flex-wrap items-center gap-4 text-sm font-semibold text-slate-600">
           <a href="#home" class="hover:text-slate-900 transition-colors">Home</a>
           <a href="#features" class="hover:text-slate-900 transition-colors">Features</a>
           <a href="#screenshots" class="hover:text-slate-900 transition-colors">Screenshots</a>
           <a href="#help" class="hover:text-slate-900 transition-colors">Help Center</a>
         </div>
-        <div class="flex flex-wrap sm:flex-nowrap items-center justify-start sm:justify-end gap-3">
-        <!-- App Store Badge Commented Out
-        <span class="store-badge-wrap">
-          <span class="store-badge disabled" aria-disabled="true">
-            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store (Coming Soon)">
-          </span>
-          <span class="store-badge-note">App Store Soon</span>
-        </span>
-        -->
-        <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet" target="_blank" rel="noopener noreferrer" class="store-badge">
-          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
-        </a>
-      </div>
+        <div class="flex items-center">
+          <!-- App Store Badge Commented Out -->
+          <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet" target="_blank" rel="noopener noreferrer" class="store-badge">
+            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="!h-[40px] sm:!h-[64px] object-contain">
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -329,14 +309,7 @@
           <p class="reveal delay-2 mt-4 text-[15px] sm:text-base md:text-lg text-slate-600 max-w-[52ch]">Family Wallet helps couples and families track shared expenses, stay synced in real time, and build better money habits without the daily confusion.</p>
 
           <div class="reveal delay-3 mt-7 flex flex-wrap items-center gap-3">
-            <!-- App Store Badge Commented Out
-            <span class="store-badge-wrap">
-              <span class="store-badge disabled" aria-disabled="true">
-                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store (Coming Soon)">
-              </span>
-              <span class="store-badge-note">App Store Soon</span>
-            </span>
-            -->
+            <!-- App Store Badge Commented Out -->
             <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet" target="_blank" rel="noopener noreferrer" class="store-badge">
               <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
             </a>
@@ -389,12 +362,7 @@
         <h2 class="section-title">Browse through the major features of Family Wallet.</h2>
         <p class="section-copy">See how Family Wallet handles everyday budgeting, transaction review, insights, and account protection in a clean mobile-first experience.</p>
 
-        <div class="mt-6 flex flex-wrap gap-2" role="tablist" aria-label="Screenshot categories">
-          <button class="tab-btn rounded-full px-4 py-2 text-sm font-semibold" role="tab" aria-selected="true" data-shot="assets/screenshots/ios/0_APP_IPHONE_65_0.png">Dashboard</button>
-          <button class="tab-btn rounded-full px-4 py-2 text-sm font-semibold" role="tab" aria-selected="false" data-shot="assets/screenshots/ios/2_APP_IPHONE_65_2.png">Budgets</button>
-          <button class="tab-btn rounded-full px-4 py-2 text-sm font-semibold" role="tab" aria-selected="false" data-shot="assets/screenshots/ios/3_APP_IPHONE_65_3.png">Insights</button>
-          <button class="tab-btn rounded-full px-4 py-2 text-sm font-semibold" role="tab" aria-selected="false" data-shot="assets/screenshots/ios/5_APP_IPHONE_65_5.png">Security</button>
-        </div>
+        <!-- Removed the confusing tab buttons from here -->
 
         <div class="mt-7 grid lg:grid-cols-[1fr_auto] gap-5 items-center">
           <div class="carousel-stage">
@@ -433,14 +401,7 @@
         <h2 class="section-title">Manage your household finances more conveniently.</h2>
         <p class="section-copy mx-auto">Start with Google Play today and keep your family spending, budgets, and insights in one simple place.</p>
         <div class="mt-7 flex flex-wrap justify-center items-start gap-4">
-          <!-- App Store Badge Commented Out
-          <span class="store-badge-wrap">
-            <span class="store-badge disabled" aria-disabled="true">
-              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store (Coming Soon)">
-            </span>
-            <span class="store-badge-note">App Store Soon</span>
-          </span>
-          -->
+          <!-- App Store Badge Commented Out -->
           <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet" target="_blank" rel="noopener noreferrer" class="store-badge">
             <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
           </a>
@@ -461,16 +422,6 @@
 
   <script>
     (function () {
-      const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
-      const heroShot = document.getElementById('hero-shot');
-      tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-          tabs.forEach((t) => t.setAttribute('aria-selected', 'false'));
-          tab.setAttribute('aria-selected', 'true');
-          if (heroShot) heroShot.src = tab.dataset.shot;
-        });
-      });
-
       const rail = document.getElementById('shot-rail');
       const prev = document.getElementById('prev-shot');
       const next = document.getElementById('next-shot');
