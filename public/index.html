@@ -39,7 +39,7 @@
       "price": "0",
       "priceCurrency": "USD"
     },
-    "downloadUrl": "https://play.google.com/store/apps/details?id=com.prasam.app.familywallet",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.prasam.app.familywallet&referrer=utm_source%3Dwebsite",
     "sameAs": [
       "privacy-policy.html",
       "terms.html"
@@ -55,17 +55,11 @@
   <style>
     :root {
       --bg: #f3efe7;
-      --surface: #fffdf8;
-      --surface-soft: #f7f1e7;
-      --surface-deep: #132b2b;
       --text: #18212f;
       --muted: #5f6875;
       --primary: #1d6b63;
-      --accent: #d5a651;
-      --stroke: #e4ddd2;
-      --stroke-strong: #d2c7b7;
-      --shadow-soft: 0 20px 50px rgba(24, 33, 47, 0.08);
-      --shadow-lift: 0 34px 80px rgba(19, 43, 43, 0.26);
+      --shadow-soft: 0 20px 50px rgba(24, 33, 47, 0.04);
+      --shadow-lift: 0 34px 80px rgba(19, 43, 43, 0.20);
     }
 
     html, body {
@@ -77,23 +71,29 @@
     body {
       font-family: 'DM Sans', sans-serif;
       color: var(--text);
+      /* Enhanced base gradient to serve as the unified canvas */
       background:
         radial-gradient(circle at 12% 0%, rgba(201, 230, 222, 0.65) 0%, transparent 34%),
         radial-gradient(circle at 88% 7%, rgba(245, 222, 187, 0.72) 0%, transparent 30%),
-        linear-gradient(180deg, #f3efe7 0%, #f7f4ec 56%, #eef4ef 100%),
+        linear-gradient(180deg, #f3efe7 0%, #f7f4ec 40%, #eef4ef 100%),
         var(--bg);
     }
 
+    /* Seamless Glass Navigation */
     .glass-nav {
-      background: rgba(255, 252, 246, 0.88);
-      border: 1px solid rgba(228, 221, 210, 0.95);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 14px 34px rgba(24, 33, 47, 0.08);
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 10px 30px rgba(24, 33, 47, 0.03);
     }
 
+    /* Seamless Surface Containers */
     .surface {
-      background: var(--surface);
-      border: 1px solid var(--stroke);
+      background: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.7);
       box-shadow: var(--shadow-soft);
     }
 
@@ -132,12 +132,6 @@
       box-shadow: 0 18px 34px rgba(29, 107, 99, 0.3);
     }
 
-    .btn-secondary {
-      color: var(--text);
-      background: #f4ecdf;
-      border: 1px solid var(--stroke-strong);
-    }
-
     .store-badge {
       display: inline-block;
       line-height: 0;
@@ -154,67 +148,23 @@
       width: auto;
     }
 
-    .store-badge.disabled {
-      opacity: 0.5;
-      filter: grayscale(1);
-      cursor: default;
-    }
-
-    .store-badge-wrap {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.25rem;
-    }
-
-    .store-badge-note {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #817b70;
-    }
-
     .reveal { opacity: 0; transform: translateY(12px); animation: revealUp 0.7s ease forwards; }
     .delay-1 { animation-delay: 0.08s; }
     .delay-2 { animation-delay: 0.16s; }
     .delay-3 { animation-delay: 0.24s; }
 
-    .hero-media, .hero-copy { min-width: 0; }
-
-    .carousel-stage {
-      position: relative;
-      overflow: hidden;
-      border-radius: 1.6rem;
-      background:
-        radial-gradient(circle at 18% 18%, rgba(78, 162, 150, 0.22), transparent 28%),
-        radial-gradient(circle at 82% 22%, rgba(213, 166, 81, 0.2), transparent 22%),
-        linear-gradient(145deg, #173332 0%, #102425 58%, #0e1c22 100%);
-      border: 1px solid rgba(46, 86, 82, 0.5);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
-      padding: 1.15rem;
-    }
-
-    .carousel-stage::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.08), transparent 45%),
-        radial-gradient(circle at 50% 100%, rgba(255,255,255,0.08), transparent 36%);
-      pointer-events: none;
-    }
-
+    /* CSS-Only Phone Frame */
     .phone-frame {
-      border-radius: 2rem;
-      border: 8px solid #0f172a;
-      overflow: hidden;
+      border-radius: 2.5rem;
+      border: 10px solid #0f172a;
       background: #0f172a;
       box-shadow: var(--shadow-lift);
       width: 100%;
       max-width: 292px;
       aspect-ratio: 9 / 19.5;
       margin: 0 auto;
+      position: relative;
+      overflow: hidden;
       animation: floatPhonePremium 6.2s ease-in-out infinite;
     }
 
@@ -240,11 +190,22 @@
       z-index: 2;
     }
 
+    /* Seamless Feature Cards */
     .feature-card {
-      background: rgba(255, 253, 248, 0.98);
-      border: 1px solid var(--stroke);
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
       border-radius: 1.35rem;
       padding: 1.4rem;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.55);
+      box-shadow: 0 16px 32px rgba(24, 33, 47, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.9);
     }
 
     .feature-icon {
@@ -254,17 +215,17 @@
       width: 3rem;
       height: 3rem;
       border-radius: 1rem;
-      background: #efe5d2;
+      background: rgba(255, 255, 255, 0.7);
       color: var(--primary);
       margin-bottom: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
     }
 
     @keyframes revealUp { to { opacity: 1; transform: translateY(0); } }
-    @keyframes floatPhonePremium { 0%,100%{transform: translateY(0);} 50%{transform: translateY(-10px);} }
+    @keyframes floatPhonePremium { 0%,100%{transform: translateY(0);} 50%{transform: translateY(-12px);} }
 
     @media (max-width: 640px) {
       .phone-frame { max-width: 248px; }
-      .carousel-stage { padding: 0.7rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -277,7 +238,7 @@
   <nav class="fixed top-0 inset-x-0 z-50 px-2 sm:px-4 pt-2 sm:pt-4">
     <div class="glass-nav max-w-6xl mx-auto rounded-2xl py-2 px-3 sm:py-3 sm:px-6 flex items-center justify-between gap-2 sm:gap-3">
       <div class="flex items-center gap-2 sm:gap-3">
-        <img src="assets/logo/family-wallet-logo.png" alt="Family Wallet logo" class="h-8 w-8 sm:h-9 sm:w-9 rounded-xl object-cover border border-blue-100">
+        <img src="assets/logo/family-wallet-logo.png" alt="Family Wallet logo" class="h-8 w-8 sm:h-9 sm:w-9 rounded-xl object-cover border border-white/50 shadow-sm">
         <div>
           <p class="font-extrabold text-slate-900 leading-tight text-sm sm:text-base">Family Wallet</p>
           <p class="text-[10px] sm:text-xs text-slate-500 -mt-0.5 hidden sm:block">Shared finances, zero confusion</p>
@@ -287,7 +248,6 @@
         <div class="hidden lg:flex flex-wrap items-center gap-4 text-sm font-semibold text-slate-600">
           <a href="#home" class="hover:text-slate-900 transition-colors">Home</a>
           <a href="#features" class="hover:text-slate-900 transition-colors">Features</a>
-          <a href="#screenshots" class="hover:text-slate-900 transition-colors">Screenshots</a>
           <a href="#help" class="hover:text-slate-900 transition-colors">Help Center</a>
         </div>
         <div class="flex items-center">
@@ -304,131 +264,93 @@
     <section id="home" class="max-w-6xl mx-auto mt-4 md:mt-8">
       <div class="surface rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 lg:p-14 grid lg:grid-cols-2 gap-8 items-center overflow-hidden">
         <div class="hero-copy">
-          <p class="reveal text-[10px] sm:text-[11px] font-extrabold tracking-[0.16em] uppercase text-blue-700">The easiest way</p>
+          <p class="reveal text-[10px] sm:text-[11px] font-extrabold tracking-[0.16em] uppercase text-primary">The easiest way</p>
           <h1 class="reveal delay-1 mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.06] max-w-[18ch]">To manage family finances together.</h1>
           <p class="reveal delay-2 mt-4 text-[15px] sm:text-base md:text-lg text-slate-600 max-w-[52ch]">Family Wallet helps couples and families track shared expenses, stay synced in real time, and build better money habits without the daily confusion.</p>
 
           <div class="reveal delay-3 mt-7 flex flex-wrap items-center gap-3">
-            <!-- App Store Badge Commented Out -->
-            <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet" target="_blank" rel="noopener noreferrer" class="store-badge">
+            <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet&referrer=utm_source%3Dwebsite" target="_blank" rel="noopener noreferrer" class="store-badge">
               <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
             </a>
           </div>
         </div>
 
-        <div class="hero-media">
-          <p class="text-sm font-semibold text-slate-600 mb-3">Preview</p>
-          <div class="carousel-stage">
-            <div class="relative">
-              <article class="phone-frame relative">
-                <div class="phone-notch"></div>
-                <img id="hero-shot" src="assets/screenshots/ios/0_APP_IPHONE_65_0.png" alt="Family Wallet screenshot preview">
-              </article>
-            </div>
+        <div class="relative py-4 w-full flex justify-center">
+          <div class="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent blur-3xl rounded-full scale-90"></div>
+          <div class="phone-frame relative z-10">
+            <div class="phone-notch"></div>
+            <img src="assets/screenshots/ios/4_APP_IPHONE_65_4.png" alt="Family Wallet Dashboard">
           </div>
         </div>
+
       </div>
     </section>
 
     <section class="max-w-6xl mx-auto mt-10 md:mt-12">
-      <div class="surface rounded-2xl p-4 sm:p-5">
-        <div class="flex flex-wrap gap-2 text-xs sm:text-sm text-slate-600">
-          <span class="bg-white border border-[var(--stroke)] rounded-full px-3 py-1.5">Real-time Sync</span>
-          <span class="bg-white border border-[var(--stroke)] rounded-full px-3 py-1.5">Biometric Security</span>
-          <span class="bg-white border border-[var(--stroke)] rounded-full px-3 py-1.5">Shared Household</span>
-          <span class="bg-white border border-[var(--stroke)] rounded-full px-3 py-1.5">Fast Local Search</span>
-          <span class="bg-white border border-[var(--stroke)] rounded-full px-3 py-1.5">Privacy Controls</span>
+      <div class="surface rounded-2xl p-4 sm:p-5 flex justify-center">
+        <div class="flex flex-wrap justify-center gap-2 text-xs sm:text-sm font-medium text-slate-600">
+          <span class="bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-2 shadow-sm">Real-time Sync</span>
+          <span class="bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-2 shadow-sm">Biometric Security</span>
+          <span class="bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-2 shadow-sm">Shared Household</span>
+          <span class="bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-2 shadow-sm">Fast Local Search</span>
+          <span class="bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-2 shadow-sm">Privacy Controls</span>
         </div>
       </div>
     </section>
 
-    <section id="features" class="max-w-6xl mx-auto mt-10 md:mt-12">
+    <section id="features" class="max-w-6xl mx-auto mt-12 md:mt-16">
       <p class="section-label">Features</p>
       <h2 class="section-title">Family Wallet has simple and practical tools for modern households.</h2>
       <p class="section-copy">Stay organized across budgets, transactions, insights, and privacy controls with a layout designed for fast everyday use.</p>
-      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <article class="feature-card"><span class="feature-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5V9H2v11h5m10 0v-6a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v6m10 0H7"/></svg></span><h3 class="font-bold text-xl">Shared Budgets</h3><p class="mt-2 text-slate-600">Keep everyone aligned with synchronized household budgets and spending visibility.</p></article>
-        <article class="feature-card"><span class="feature-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35M10.8 18a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Z"/></svg></span><h3 class="font-bold text-xl">Instant Search</h3><p class="mt-2 text-slate-600">Find any transaction quickly with fast local indexing and smart filtering.</p></article>
-        <article class="feature-card"><span class="feature-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 11V8a5 5 0 0 1 10 0v3m-12 0h14v9H5z"/></svg></span><h3 class="font-bold text-xl">Secure Access</h3><p class="mt-2 text-slate-600">Protect your finances using authentication and optional biometric lock.</p></article>
-        <article class="feature-card"><span class="feature-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 14l3-3 3 2 4-5"/></svg></span><h3 class="font-bold text-xl">Insights & Trends</h3><p class="mt-2 text-slate-600">Understand monthly patterns with clear visuals and actionable spending insights.</p></article>
-        <article class="feature-card"><span class="feature-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm-7 16a7 7 0 0 1 14 0"/></svg></span><h3 class="font-bold text-xl">Household Collaboration</h3><p class="mt-2 text-slate-600">Track expenses together in real time so family decisions are data-driven.</p></article>
-        <article class="feature-card"><span class="feature-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-9-9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6"/></svg></span><h3 class="font-bold text-xl">Data Control</h3><p class="mt-2 text-slate-600">Manage deletion and privacy settings from app flows and support channels.</p></article>
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <article class="feature-card"><span class="feature-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5V9H2v11h5m10 0v-6a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v6m10 0H7"/></svg></span><h3 class="font-bold text-xl text-slate-900">Shared Budgets</h3><p class="mt-2 text-slate-600 text-sm leading-relaxed">Keep everyone aligned with synchronized household budgets and spending visibility.</p></article>
+        <article class="feature-card"><span class="feature-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35M10.8 18a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Z"/></svg></span><h3 class="font-bold text-xl text-slate-900">Instant Search</h3><p class="mt-2 text-slate-600 text-sm leading-relaxed">Find any transaction instantly using our blazing-fast local database and multi-select filtering.</p></article>
+        <article class="feature-card"><span class="feature-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 11V8a5 5 0 0 1 10 0v3m-12 0h14v9H5z"/></svg></span><h3 class="font-bold text-xl text-slate-900">Secure Access</h3><p class="mt-2 text-slate-600 text-sm leading-relaxed">Lock your household profile strictly behind your device's native fingerprint or FaceID.</p></article>
+        <article class="feature-card"><span class="feature-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 14l3-3 3 2 4-5"/></svg></span><h3 class="font-bold text-xl text-slate-900">Insights & Trends</h3><p class="mt-2 text-slate-600 text-sm leading-relaxed">Understand monthly patterns with clear visuals and actionable spending insights.</p></article>
+        <article class="feature-card"><span class="feature-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm-7 16a7 7 0 0 1 14 0"/></svg></span><h3 class="font-bold text-xl text-slate-900">Household Collaboration</h3><p class="mt-2 text-slate-600 text-sm leading-relaxed">Track expenses together in real time so family decisions are data-driven.</p></article>
+        <article class="feature-card"><span class="feature-icon"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-9-9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6"/></svg></span><h3 class="font-bold text-xl text-slate-900">Data Control</h3><p class="mt-2 text-slate-600 text-sm leading-relaxed">Manage deletion and privacy settings from app flows and support channels.</p></article>
       </div>
     </section>
 
-    <section id="screenshots" class="max-w-6xl mx-auto mt-10 md:mt-12">
-      <div class="surface rounded-3xl p-5 sm:p-7">
-        <p class="section-label">Screenshots</p>
-        <h2 class="section-title">Browse through the major features of Family Wallet.</h2>
-        <p class="section-copy">See how Family Wallet handles everyday budgeting, transaction review, insights, and account protection in a clean mobile-first experience.</p>
-
-        <!-- Removed the confusing tab buttons from here -->
-
-        <div class="mt-7 grid lg:grid-cols-[1fr_auto] gap-5 items-center">
-          <div class="carousel-stage">
-            <div class="overflow-x-auto" id="shot-rail">
-              <div class="flex gap-4 min-w-max pr-1">
-                <article class="phone-frame relative"><div class="phone-notch"></div><img src="assets/screenshots/ios/0_APP_IPHONE_65_0.png" alt="Dashboard screenshot"></article>
-                <article class="phone-frame relative"><div class="phone-notch"></div><img src="assets/screenshots/ios/1_APP_IPHONE_65_1.png" alt="Transactions screenshot"></article>
-                <article class="phone-frame relative"><div class="phone-notch"></div><img src="assets/screenshots/ios/2_APP_IPHONE_65_2.png" alt="Budget screenshot"></article>
-                <article class="phone-frame relative"><div class="phone-notch"></div><img src="assets/screenshots/ios/3_APP_IPHONE_65_3.png" alt="Reports screenshot"></article>
-              </div>
-            </div>
-          </div>
-          <div class="flex lg:flex-col gap-2">
-            <button id="prev-shot" class="btn-secondary rounded-xl px-4 py-2 text-sm font-semibold">Prev</button>
-            <button id="next-shot" class="btn-secondary rounded-xl px-4 py-2 text-sm font-semibold">Next</button>
-          </div>
+    <section id="help" class="max-w-6xl mx-auto mt-16 md:mt-20">
+      <div class="surface rounded-3xl p-6 md:p-10 text-center border-t-[4px] border-t-primary shadow-sm relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent pointer-events-none"></div>
+        <img src="assets/logo/family-wallet-logo.png" loading="lazy" alt="Family Wallet help center" class="relative z-10 h-16 w-16 rounded-2xl object-cover border border-white/60 mx-auto shadow-sm">
+        <p class="relative z-10 section-label mt-6">Help Center</p>
+        <h2 class="relative z-10 section-title">Need to ask us how to use Family Wallet?</h2>
+        <p class="relative z-10 section-copy mx-auto">You can get regular update guidance, setup help, and practical answers for syncing, accounts, budgets, and household usage.</p>
+        <div class="relative z-10 mt-8 flex flex-wrap justify-center gap-3">
+          <a href="mailto:prasam.dev@gmail.com" class="btn-primary rounded-xl px-6 py-3.5 text-sm sm:text-base font-bold shadow-lg">Contact Support</a>
         </div>
       </div>
     </section>
 
-    <section id="help" class="max-w-6xl mx-auto mt-10 md:mt-12">
-      <div class="surface rounded-3xl p-6 md:p-8 text-center bg-[rgba(255,253,248,0.96)]">
-        <img src="assets/logo/family-wallet-logo.png" alt="Family Wallet help center" class="h-16 w-16 rounded-2xl object-cover border border-blue-100 mx-auto">
-        <p class="section-label mt-5">Help Center</p>
-        <h2 class="section-title">Need to ask us how to use Family Wallet?</h2>
-        <p class="section-copy mx-auto">You can get regular update guidance, setup help, and practical answers for syncing, accounts, budgets, and household usage.</p>
-        <div class="mt-6 flex flex-wrap justify-center gap-3">
-          <a href="mailto:prasam.dev@gmail.com" class="btn-primary rounded-xl px-5 py-3 text-sm sm:text-base font-semibold">Contact Support</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="max-w-6xl mx-auto mt-10 md:mt-12">
-      <div class="surface rounded-3xl p-6 md:p-8 text-center bg-[linear-gradient(180deg,rgba(255,253,248,0.98),rgba(243,239,231,0.98))]">
-        <p class="section-label">Download</p>
-        <h2 class="section-title">Manage your household finances more conveniently.</h2>
-        <p class="section-copy mx-auto">Start with Google Play today and keep your family spending, budgets, and insights in one simple place.</p>
-        <div class="mt-7 flex flex-wrap justify-center items-start gap-4">
-          <!-- App Store Badge Commented Out -->
-          <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet" target="_blank" rel="noopener noreferrer" class="store-badge">
-            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
-          </a>
+    <section class="max-w-6xl mx-auto mt-8 md:mt-10">
+      <div class="surface rounded-3xl p-6 md:p-12 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/30 pointer-events-none"></div>
+        <div class="relative z-10">
+          <p class="section-label">Download</p>
+          <h2 class="section-title">Manage your household finances more conveniently.</h2>
+          <p class="section-copy mx-auto">Start with Google Play today and keep your family spending, budgets, and insights in one simple place.</p>
+          <div class="mt-8 flex flex-wrap justify-center items-start gap-4">
+            <a href="https://play.google.com/store/apps/details?id=com.prasam.app.familywallet&referrer=utm_source%3Dwebsite" target="_blank" rel="noopener noreferrer" class="store-badge">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" loading="lazy" alt="Get it on Google Play">
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="px-2 sm:px-4 pb-10">
-    <div class="max-w-6xl mx-auto surface rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-slate-600 text-center md:text-left">© 2026 Family Wallet. Built for better family financial decisions.</p>
-      <div class="flex items-center gap-5 text-sm font-semibold">
-        <a href="privacy-policy.html" class="text-slate-700 hover:text-blue-700 transition-colors">Privacy Policy</a>
-        <a href="terms.html" class="text-slate-700 hover:text-blue-700 transition-colors">Terms of Service</a>
+    <div class="max-w-6xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-4 px-6 md:px-8">
+      <p class="text-sm font-medium text-slate-500">© 2026 Family Wallet. Built for better family financial decisions.</p>
+      <div class="flex items-center justify-center gap-6 text-sm font-bold">
+        <a href="privacy-policy.html" class="text-slate-600 hover:text-primary transition-colors">Privacy Policy</a>
+        <a href="terms.html" class="text-slate-600 hover:text-primary transition-colors">Terms of Service</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    (function () {
-      const rail = document.getElementById('shot-rail');
-      const prev = document.getElementById('prev-shot');
-      const next = document.getElementById('next-shot');
-      const amount = 320;
-      if (prev && rail) prev.addEventListener('click', () => rail.scrollBy({ left: -amount, behavior: 'smooth' }));
-      if (next && rail) next.addEventListener('click', () => rail.scrollBy({ left: amount, behavior: 'smooth' }));
-    })();
-  </script>
 </body>
 </html>
